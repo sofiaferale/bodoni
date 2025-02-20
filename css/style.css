@@ -1,0 +1,368 @@
+/* Reset */
+•⁠  ⁠{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bodoni", sans-serif;
+    
+}
+@font-face {
+    font-family: 'Jost';
+    src: url('../font/BodoniFLF-Roman.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../font/BodoniFLF-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Header */
+header {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Logo a sinistra, menu a destra */
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Logo + Freccia (clickabili insieme) */
+.logo img {
+    max-width: 100px;
+    width: 15vw;
+    height: auto;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+/* Stile Logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffff;
+    
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Menu di navigazione */
+.nav-links {
+    display: flex;
+    gap: 1.5vw; /* Spazio tra i link */
+    white-space: nowrap;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Menu Toggle (per dispositivi mobili) */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+    margin-top: -50px;
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px; /* Ridurre il padding per schermi più piccoli */
+        flex-direction: column; /* Cambia la direzione in colonna */
+        align-items: flex-start; /* Allinea a sinistra */
+    }
+
+    .logo img {
+        max-width: 80px;
+        width: 15vw;
+    }
+
+    /* Logo e Freccia */
+    .logo-container {
+        margin-bottom: 10px; /* Aggiungi margine tra logo e menu */
+        margin-top: 10px;
+    }
+
+    /* Menu di navigazione */
+    .nav-links {
+        flex-direction: column; /* Dispone il menu in colonna */
+        gap: 1rem; /* Riduci lo spazio tra i link */
+        align-items: center; /* Centra i link */
+        width: 100%; /* Il menu prende tutta la larghezza */
+        margin-top: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 16px; /* Aumenta la dimensione dei link su mobile */
+    }
+
+    /* Mostra il menu toggle su dispositivi mobili */
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none; /* Nasconde il menu */
+    }
+
+    /* Mostra il menu quando il toggle è attivato */
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+   
+}
+
+body {
+    background-color: #E4F3DE; 
+    margin: 0;
+    font-family: "jost", sans-serif;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 50px;
+}
+
+.hero .text {
+    position: absolute;
+    right: 14vw; /* Usa unità relative per la posizione */
+    top: 55%;
+    transform: translateY(-50%);
+    margin: 0; /* Rimuove il margine che può creare problemi */
+    
+    color: #1A373E;
+    padding: 2vw 4vw; /* Adatta il padding allo schermo */
+    border-radius: 3vw;
+    max-width: 40vw; /* Impedisce che diventi troppo largo */
+    width: auto; /* Permette al contenuto di adattarsi */
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+.hero .text p {
+    font-size: 4vw; /* Anche il testo si adatta */ 
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Contenuto Principale */
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: left; /* Centra orizzontalmente */
+    padding: 2vw 0vw; /* Adatta lo spazio ai lati */
+    text-align: left;
+}
+
+/* Titolo principale */
+h2 {
+     /* Adatta la dimensione del titolo */
+    font-weight: bold;
+    margin-bottom: 6vw;
+    margin-top: 3vw;
+}
+
+/* Paragrafi */
+.testo-p {
+     /* Si ridimensiona con lo schermo */
+    max-width: 80vw; /* Impedisce che il testo diventi troppo largo */
+    line-height: 1.2;
+    text-align: left; /* Mantiene leggibilità */
+    
+}
+
+/* Separatore */
+.separator {
+    width: 30vw; /* Adatta la larghezza al viewport */
+    height: 2px;
+    background: #72B5A7;
+    margin: 2vw auto;
+}
+
+/* Wrapper principale */
+.main-wrapper {
+    font-size: clamp(2vw, 3vw, 20px);
+    padding: 6vw; /* Usa unità relative per un migliore adattamento */
+    margin-bottom: 1vw;
+    
+}
+.Bodoni img {
+    margin-bottom: 50px;
+}
+.evidenziato{
+    
+    font-weight: bold;
+}
+
+.evidenziato2 {
+    font-family: 'Jost';
+    src: url('../font/BodoniFLF-BoldItalic.ttf');
+    font-weight: italic;
+    font-style: italic;
+}
+
+/* Sezioni */
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    position: relative; /* Importante per posizionare il testo sopra */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.box-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.box-image::after {
+    content: "";  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.5); /* Overlay nero trasparente */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px; /* Stesso border-radius dell'immagine */
+    z-index: 1;
+}
+
+.box-image:hover::after {
+    opacity: 1;
+}
+
+.box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adatta l'immagine senza distorsioni */
+    border-radius: 10px; /* Angoli arrotondati */
+}
+
+.box-image h3 {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 30px;
+    z-index: 2;
+    
+  
+}
+
+
+
+/* Footer */ù
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+    min-height: calc(100vh - 150vh);
+    padding-bottom: 50px;
+    
+    
+
+}
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: auto; /*grandezza blocco footer*/
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    
+    
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+
+}
+
+.footer-links {
+    padding-top: 100px;
+}
+
+
